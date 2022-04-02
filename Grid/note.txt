@@ -1,0 +1,12 @@
+grid{
+    display:grid;
+    grid-template-columns: 1 2 3 4 5 6 7 8 9 10 11 12;(px, %, auto)
+    grid-column-gap:(px,rem,em);
+    grid-row-gap:(px,rem,em);
+    grid-gap:(px,rem,em)//work for row and column equally
+    //responsive unit
+    grid-template-columns: (fr)[1fr 2fr and so on]
+    grid-template: row / column;
+    grid-template-columns:repeat(how many times ( such as 3), 1fr)
+    grid-template: repeat(3, 3fr) / repeat(2, 2fr);
+}

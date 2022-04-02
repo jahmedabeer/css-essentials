@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout One</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        font-size: 2rem;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+      [class^="box-"] {
+        border: 2px dotted burlywood;
+      }
+      .main {
+        height: 85vh;
+        display: grid;
+        grid-gap: 0.75rem;
+        grid-template-areas:
+          "a a a a  a a a a  a a a a"
+          "b b b b  b b b b  c c c c";
+      }
+
+      .box-one {
+        grid-area: a;
+      }
+
+      .box-two {
+        grid-area: b;
+      }
+
+      .box-three {
+        grid-area: c;
+      }
+
+      /* mobile */
+      @media (max-width: 480px) {
+        .main {
+          grid-template-areas:
+            "a a a a  a a a a  a a a a"
+            "b b b b  b b b b  b b b b"
+            "b b b b  b b b b  b b b b"
+            "c c c c  c c c c  c c c c";
+        }
+      }
+      @media (max-width: 768px) {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="box-one">Item A</div>
+        <div class="box-two">Item B</div>
+        <div class="box-three">Item C</div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout One</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        font-size: 2rem;
+      }
+      .container {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        text-align: center;
+      }
+      [class^="box-"] {
+        border: 2px dotted burlywood;
+      }
+      h2 {
+        font-family: cursive;
+      }
+      .main {
+        display: grid;
+        gap: 0.75rem;
+        height: 100vh;
+        grid-template-areas:
+          "left   header    header"
+          "left   section   right"
+          "footer footer    right";
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-rows: 1fr 6fr 1fr;
+      }
+      .main .box-one {
+        grid-area: header;
+      }
+      .main .box-two {
+        grid-area: section;
+      }
+      .main .box-three {
+        grid-area: right;
+      }
+      .main .box-four {
+        grid-area: left;
+      }
+      .main .box-five {
+        grid-area: footer;
+      }
+
+      /* Layour two */
+      .main--1 {
+        display: grid;
+        gap: 0.75rem;
+        height: 100vh;
+        grid-template-areas:
+          "one  two three four"
+          "one  two three four"
+          "five two six   six"
+          "five two six   six";
+        grid-template-columns: 1fr 2fr 3fr 3fr;
+        grid-template-rows: 1fr 3fr 1fr 3fr;
+      }
+
+      .main--1 .box-one {
+        grid-area: one;
+      }
+      .main--1 .box-two {
+        grid-area: two;
+      }
+      .main--1 .box-three {
+        grid-area: three;
+      }
+      .main--1 .box-four {
+        grid-area: four;
+      }
+      .main--1 .box-five {
+        grid-area: five;
+      }
+      .main--1 .box-six {
+        grid-area: six;
+      }
+
+      /* desktop */
+      @media (max-width: 768px) {
+        /* layout one */
+        .main {
+          grid-template-areas:
+            "header   header"
+            "section  section"
+            "left     right"
+            "footer   footer";
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 6fr 2fr 1fr;
+        }
+        /* Layout two */
+        .main--1 {
+          grid-template-areas:
+            "one   three"
+            "two   two"
+            "four  five"
+            "six   six";
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 2fr 2fr 4fr;
+        }
+      }
+
+      @media (max-width: 480px) {
+        /* layout one */
+        .main {
+          grid-template-areas:
+            "header"
+            "left"
+            "right"
+            "section"
+            "footer";
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 2fr 2fr 6fr 1fr;
+        }
+        /* Layout two */
+        .main--1 {
+          grid-template-areas:
+            "one"
+            "two"
+            "three"
+            "four"
+            "five"
+            "six";
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 2fr 2fr 2fr 2fr 3fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 style="margin-bottom: 1rem">Layout One</h2>
+      <div class="main">
+        <div class="box-one">Header</div>
+        <div class="box-two">Section</div>
+        <div class="box-three">Right</div>
+        <div class="box-four">Left</div>
+        <div class="box-five">Footer</div>
+      </div>
+      <!-- layout two -->
+      <h2 style="margin: 2rem 0">Layout Two</h2>
+      <div class="main--1">
+        <div class="box-one">One</div>
+        <div class="box-two">Two</div>
+        <div class="box-three">Three</div>
+        <div class="box-four">Four</div>
+        <div class="box-five">Five</div>
+        <div class="box-six">Six</div>
+      </div>
+    </div>
+  </body>
+</html>
